@@ -1,5 +1,12 @@
 package com.iluwatar.abstractfactory;
 
+import com.iluwatar.abstractfactory.impl.elf.ElfKingdomFactory;
+import com.iluwatar.abstractfactory.impl.orc.OrcKingdomFactory;
+import com.iluwatar.abstractfactory.infc.IArmy;
+import com.iluwatar.abstractfactory.infc.ICastle;
+import com.iluwatar.abstractfactory.infc.IKing;
+import com.iluwatar.abstractfactory.infc.IKingdomFactory;
+
 /**
  * 
  * The essence of the Abstract Factory pattern is a factory interface
@@ -17,13 +24,14 @@ public class App {
 		createKingdom(new OrcKingdomFactory());
 	}
 
-	public static void createKingdom(KingdomFactory factory) {
-		King king = factory.createKing();
-		Castle castle = factory.createCastle();
-		Army army = factory.createArmy();
+	public static void createKingdom(IKingdomFactory factory) {
+		IKing king = factory.createKing();
+		ICastle castle = factory.createCastle();
+		IArmy army = factory.createArmy();
 		System.out.println("The kingdom was created.");
 		System.out.println(king);
 		System.out.println(castle);
 		System.out.println(army);
+		System.out.println();
 	}
 }
