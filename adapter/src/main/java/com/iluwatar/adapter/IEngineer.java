@@ -5,7 +5,7 @@ package com.iluwatar.adapter;
  * Engineers can operate devices.
  * 
  */
-public interface Engineer {
+public interface IEngineer {
 
 	void operateDevice();
 

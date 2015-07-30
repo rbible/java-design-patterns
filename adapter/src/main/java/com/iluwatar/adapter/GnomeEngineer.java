@@ -6,7 +6,7 @@ package com.iluwatar.adapter;
  * Engineer interface expected by the client (GnomeEngineeringManager).
  * 
  */
-public class GnomeEngineer implements Engineer {
+public class GnomeEngineer implements IEngineer {
 
 	private GoblinGlider glider;
 

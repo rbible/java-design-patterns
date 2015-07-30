@@ -5,9 +5,9 @@ package com.iluwatar.adapter;
  * GnomeEngineering manager uses Engineer to operate devices.
  * 
  */
-public class GnomeEngineeringManager implements Engineer {
+public class GnomeEngineeringManager implements IEngineer {
 
-	private Engineer engineer;
+	private IEngineer engineer;
 
 	public GnomeEngineeringManager() {
 		engineer = new GnomeEngineer();
