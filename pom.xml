@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.iluwatar</groupId>
@@ -71,8 +72,8 @@
 		<module>front-controller</module>
 		<module>repository</module>
 		<module>async-method-invocation</module>
-    <module>business-delegate</module>
-  </modules>
+		<module>business-delegate</module>
+	</modules>
 
 	<dependencyManagement>
 		<dependencies>
@@ -114,9 +115,8 @@
 	<build>
 		<pluginManagement>
 			<plugins>
-				<!-- This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. TODO: Remove when the 
-					m2e plugin can correctly bind to Maven lifecycle -->
+				<!-- This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. TODO: 
+					Remove when the m2e plugin can correctly bind to Maven lifecycle -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -138,7 +138,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
@@ -171,11 +171,9 @@
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${jacoco.version}</version>
-				<!-- The following exclude configuration was added because error occurred 
-					when executing "mvn clean test jacoco:report coveralls:report" -->
-				<!-- [ERROR] Failed to execute goal org.eluder.coveralls:coveralls-maven-plugin:3.1.0:report 
-					(default-cli) on project java-design-patterns: I/O operation failed: No source 
-					found for domainapp/dom/modules/simple/QSimpleObject.java -> [Help 1] -->
+				<!-- The following exclude configuration was added because error occurred when executing "mvn clean test jacoco:report coveralls:report" -->
+				<!-- [ERROR] Failed to execute goal org.eluder.coveralls:coveralls-maven-plugin:3.1.0:report (default-cli) on project java-design-patterns: 
+					I/O operation failed: No source found for domainapp/dom/modules/simple/QSimpleObject.java -> [Help 1] -->
 				<configuration>
 					<excludes>
 						<exclude>domainapp/dom/modules/simple/QSimpleObject.class</exclude>
