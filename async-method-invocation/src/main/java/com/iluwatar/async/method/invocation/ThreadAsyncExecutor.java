@@ -8,18 +8,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Implementation of async executor that creates a new thread for every task.
  */
-public class ThreadAsyncExecutor implements AsyncExecutor {
+public class ThreadAsyncExecutor implements IAsyncExecutor {
 
 	/** Index for thread naming */
 	private final AtomicInteger idx = new AtomicInteger(0);
 
 	@Override
-	public <T> AsyncResult<T> startProcess(Callable<T> task) {
+	public <T> IAsyncResult<T> startProcess(Callable<T> task) {
 		return startProcess(task, null);
 	}
 
 	@Override
-	public <T> AsyncResult<T> startProcess(Callable<T> task, AsyncCallback<T> callback) {
+	public <T> IAsyncResult<T> startProcess(Callable<T> task, IAsyncCallback<T> callback) {
 		CompletableResult<T> result = new CompletableResult<>(callback);
 		new Thread(() -> {
 			try {
@@ -32,7 +32,7 @@ public class ThreadAsyncExecutor implements AsyncExecutor {
 	}
 
 	@Override
-	public <T> T endProcess(AsyncResult<T> asyncResult) throws ExecutionException, InterruptedException {
+	public <T> T endProcess(IAsyncResult<T> asyncResult) throws ExecutionException, InterruptedException {
 		if (asyncResult.isCompleted()) {
 			return asyncResult.getValue();
 		} else {
@@ -49,20 +49,20 @@ public class ThreadAsyncExecutor implements AsyncExecutor {
 	 * @see java.util.concurrent.FutureTask
 	 * @see java.util.concurrent.CompletableFuture
 	 */
-	private static class CompletableResult<T> implements AsyncResult<T> {
+	private static class CompletableResult<T> implements IAsyncResult<T> {
 
 		static final int RUNNING = 1;
 		static final int FAILED = 2;
 		static final int COMPLETED = 3;
 
 		final Object lock;
-		final Optional<AsyncCallback<T>> callback;
+		final Optional<IAsyncCallback<T>> callback;
 
 		volatile int state = RUNNING;
 		T value;
 		Exception exception;
 
-		CompletableResult(AsyncCallback<T> callback) {
+		CompletableResult(IAsyncCallback<T> callback) {
 			this.lock = new Object();
 			this.callback = Optional.ofNullable(callback);
 		}

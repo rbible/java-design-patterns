@@ -5,9 +5,9 @@ import java.util.concurrent.Callable;
 /**
  * <p>
  * This application demonstrates the async method invocation pattern. Key parts of the pattern are
- * <code>AsyncResult</code> which is an intermediate container for an asynchronously evaluated value,
- * <code>AsyncCallback</code> which can be provided to be executed on task completion and
- * <code>AsyncExecutor</code> that manages the execution of the async tasks.
+ * <code>IAsyncResult</code> which is an intermediate container for an asynchronously evaluated value,
+ * <code>IAsyncCallback</code> which can be provided to be executed on task completion and
+ * <code>IAsyncExecutor</code> that manages the execution of the async tasks.
  * </p>
  * <p>
  * The main method shows example flow of async invocations. The main thread starts multiple tasks with
@@ -27,9 +27,9 @@ import java.util.concurrent.Callable;
  * account but rather provides a simple version that helps to understand the pattern.
  * </p>
  *
- * @see AsyncResult
- * @see AsyncCallback
- * @see AsyncExecutor
+ * @see IAsyncResult
+ * @see IAsyncCallback
+ * @see IAsyncExecutor
  *
  * @see java.util.concurrent.FutureTask
  * @see java.util.concurrent.CompletableFuture
@@ -39,14 +39,14 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 		// construct a new executor that will run async tasks
-		AsyncExecutor executor = new ThreadAsyncExecutor();
+		IAsyncExecutor executor = new ThreadAsyncExecutor();
 
 		// start few async tasks with varying processing times, two last with callback handlers
-		AsyncResult<Integer> asyncResult1 = executor.startProcess(lazyval(10, 500));
-		AsyncResult<String> asyncResult2 = executor.startProcess(lazyval("test", 300));
-		AsyncResult<Long> asyncResult3 = executor.startProcess(lazyval(50L, 700));
-		AsyncResult<Integer> asyncResult4 = executor.startProcess(lazyval(20, 400), callback("Callback result 4"));
-		AsyncResult<String> asyncResult5 = executor.startProcess(lazyval("callback", 600), callback("Callback result 5"));
+		IAsyncResult<Integer> asyncResult1 = executor.startProcess(lazyval(10, 500));
+		IAsyncResult<String> asyncResult2 = executor.startProcess(lazyval("test", 300));
+		IAsyncResult<Long> asyncResult3 = executor.startProcess(lazyval(50L, 700));
+		IAsyncResult<Integer> asyncResult4 = executor.startProcess(lazyval(20, 400), callback("Callback result 4"));
+		IAsyncResult<String> asyncResult5 = executor.startProcess(lazyval("callback", 600), callback("Callback result 5"));
 
 		// emulate processing in the current thread while async tasks are running in their own threads
 		Thread.sleep(350); // Oh boy I'm working hard here
@@ -86,7 +86,7 @@ public class App {
 	 * @param name callback name
 	 * @return new async callback
 	 */
-	private static <T> AsyncCallback<T> callback(String name) {
+	private static <T> IAsyncCallback<T> callback(String name) {
 		return (value, ex) -> {
 			if (ex.isPresent()) {
 				log(name + " failed: " + ex.map(Exception::getMessage).orElse(""));
