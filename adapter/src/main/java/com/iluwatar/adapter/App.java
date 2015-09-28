@@ -1,5 +1,8 @@
 package com.iluwatar.adapter;
 
+import com.iluwatar.adapter.itfc.IEngineer;
+import com.iluwatar.adapter.middleservice.GnomeEngineeringManager;
+
 /**
  * 
  * There are two variations of the Adapter pattern: The class adapter implements
