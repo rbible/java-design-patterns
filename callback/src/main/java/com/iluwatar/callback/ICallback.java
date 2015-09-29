@@ -3,7 +3,7 @@ package com.iluwatar.callback;
 /**
  * Callback interface
  */
-public interface Callback {
+public interface ICallback {
 
-	public void call();
+    public void call();
 }

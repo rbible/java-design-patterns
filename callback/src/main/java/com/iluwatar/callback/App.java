@@ -6,14 +6,14 @@ package com.iluwatar.callback;
  */
 public class App {
 
-	public static void main(String[] args) {
-		Task task = new SimpleTask();
-		Callback callback = new Callback() {
-			@Override
-			public void call() {
-				System.out.println("I'm done now.");
-			}
-		};
-		task.executeWith(callback);
-	}
+    public static void main(String[] args) {
+        AbsTask task = new SimpleTask();
+        ICallback callback = new ICallback() {
+            @Override
+            public void call() {
+                System.out.println("I'm done now.");
+            }
+        };
+        task.executeWith(callback);
+    }
 }
