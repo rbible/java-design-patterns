@@ -1,11 +1,11 @@
-package com.iluwatar.business.delegate;
+package com.iluwatar.business.delegate.itfc;
 
 /**
  * 
  * Interface for service implementations
  *
  */
-public interface BusinessService {
+public interface IBusinessService {
 
 	void doProcessing();
 }

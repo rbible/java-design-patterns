@@ -16,16 +16,16 @@ package com.iluwatar.business.delegate;
  *
  */
 public class App {
-	
-	public static void main(String[] args) {
-		
-		BusinessDelegate businessDelegate = new BusinessDelegate();
-		businessDelegate.setServiceType(ServiceType.EJB);
 
-		Client client = new Client(businessDelegate);
-		client.doTask();
+    public static void main(String[] args) {
 
-		businessDelegate.setServiceType(ServiceType.JMS);
-		client.doTask();
-	}
+        BusinessDelegate businessDelegate = new BusinessDelegate();
+        businessDelegate.setServiceType(EServiceType.EJB);
+
+        Client client = new Client(businessDelegate);
+        client.doTask();
+
+        businessDelegate.setServiceType(EServiceType.JMS);
+        client.doTask();
+    }
 }
