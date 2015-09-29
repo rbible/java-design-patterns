@@ -16,7 +16,6 @@ public class App {
 		orcMessage.print();
 
 		System.out.println("\n");
-
 		System.out.println("Message from the elves: ");
 
 		LetterComposite elfMessage = new Messenger().messageFromElves();
