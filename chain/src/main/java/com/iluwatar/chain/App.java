@@ -1,5 +1,8 @@
 package com.iluwatar.chain;
 
+import com.iluwatar.chain.service.ERequestType;
+import com.iluwatar.chain.service.OrcKing;
+
 /**
  * 
  * Chain of Responsibility organizes request handlers (RequestHandler) into a
@@ -10,13 +13,11 @@ package com.iluwatar.chain;
  */
 public class App {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		OrcKing king = new OrcKing();
-		king.makeRequest(new Request(RequestType.DEFEND_CASTLE, "defend castle"));
-		king.makeRequest(new Request(RequestType.TORTURE_PRISONER,
-				"torture prisoner"));
-		king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax"));
-
-	}
+        OrcKing king = new OrcKing();
+        king.makeRequest(new Request(ERequestType.DEFEND_CASTLE, "defend castle"));
+        king.makeRequest(new Request(ERequestType.TORTURE_PRISONER, "torture prisoner"));
+        king.makeRequest(new Request(ERequestType.COLLECT_TAX, "collect tax"));
+    }
 }
