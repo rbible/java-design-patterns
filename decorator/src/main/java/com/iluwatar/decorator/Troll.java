@@ -5,7 +5,7 @@ package com.iluwatar.decorator;
  * Troll implements Hostile interface directly.
  *
  */
-public class Troll implements Hostile {
+public class Troll implements IHostile {
 
 	public void attack() {
 		System.out.println("The troll swings at you with a club!");

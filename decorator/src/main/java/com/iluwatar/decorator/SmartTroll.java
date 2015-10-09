@@ -7,11 +7,11 @@ package com.iluwatar.decorator;
  * to the decorated Hostile object.
  *
  */
-public class SmartTroll implements Hostile {
+public class SmartTroll implements IHostile {
 
-	private Hostile decorated;
+	private IHostile decorated;
 
-	public SmartTroll(Hostile decorated) {
+	public SmartTroll(IHostile decorated) {
 		this.decorated = decorated;
 	}
 
