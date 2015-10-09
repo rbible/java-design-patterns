@@ -5,7 +5,7 @@ package com.iluwatar.strategy;
  * Melee strategy.
  *
  */
-public class MeleeStrategy implements DragonSlayingStrategy {
+public class MeleeStrategy implements IDragonSlayingStrategy {
 
 	@Override
 	public void execute() {

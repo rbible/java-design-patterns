@@ -33,8 +33,8 @@ public class App {
 		System.out.println("threadSafeIvoryTower2=" + threadSafeIvoryTower2);
 
 		// enum singleton
-		EnumIvoryTower enumIvoryTower1 = EnumIvoryTower.INSTANCE;
-		EnumIvoryTower enumIvoryTower2 = EnumIvoryTower.INSTANCE;
+		EEnumIvoryTower enumIvoryTower1 = EEnumIvoryTower.INSTANCE;
+		EEnumIvoryTower enumIvoryTower2 = EEnumIvoryTower.INSTANCE;
 		System.out.println("enumIvoryTower1=" + enumIvoryTower1);
 		System.out.println("enumIvoryTower2=" + enumIvoryTower2);
 		

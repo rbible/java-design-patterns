@@ -5,30 +5,30 @@ package com.iluwatar.intercepting.filter;
  * Handles chain management.
  *
  */
-public abstract class AbstractFilter implements Filter {
+public abstract class AbstractFilter implements IFilter {
 
-	private Filter next;
+	private IFilter next;
 	
 	public AbstractFilter() {
 	}
 
-	public AbstractFilter(Filter next) {
+	public AbstractFilter(IFilter next) {
 		this.next = next;
 	}
 	
 	@Override
-	public void setNext(Filter filter) {
+	public void setNext(IFilter filter) {
 		this.next = filter;	
 	}
 	
 	@Override
-	public Filter getNext() {
+	public IFilter getNext() {
 		return next;
 	}
 
 	@Override
-	public Filter getLast() {
-		Filter last = this;
+	public IFilter getLast() {
+		IFilter last = this;
 		while (last.getNext() != null) {
 			last = last.getNext();
 		}

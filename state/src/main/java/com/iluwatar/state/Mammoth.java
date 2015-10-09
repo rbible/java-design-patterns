@@ -1,13 +1,11 @@
 package com.iluwatar.state;
 
 /**
- * 
  * Mammoth has internal state that defines its behavior.
- * 
  */
 public class Mammoth {
 
-	private State state;
+	private IState state;
 
 	public Mammoth() {
 		state = new PeacefulState(this);
@@ -21,7 +19,7 @@ public class Mammoth {
 		}
 	}
 
-	private void changeStateTo(State newState) {
+	private void changeStateTo(IState newState) {
 		this.state = newState;
 		this.state.onEnterState();
 	}

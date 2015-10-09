@@ -5,9 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * {@link Message} basic implementation
+ * {@link IMessage} basic implementation
  */
-public class SimpleMessage implements Message {
+public class SimpleMessage implements IMessage {
 
 	private Map<Headers, String> headers = new HashMap<>();
 	private String body;

@@ -2,7 +2,9 @@ package com.iluwatar.front.controller;
 
 public class ApplicationException extends RuntimeException {
 
-    public ApplicationException(Throwable cause) {
+    private static final long serialVersionUID = 1L;
+
+	public ApplicationException(Throwable cause) {
         super(cause);
     }
 }

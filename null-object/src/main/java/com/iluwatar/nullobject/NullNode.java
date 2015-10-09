@@ -7,7 +7,7 @@ package com.iluwatar.nullobject;
  * Implemented as Singleton, since all the NullNodes are the same.
  *
  */
-public class NullNode implements Node {
+public class NullNode implements INode {
 
 	private static NullNode instance = new NullNode();
 	
@@ -24,12 +24,12 @@ public class NullNode implements Node {
 	}
 
 	@Override
-	public Node getLeft() {
+	public INode getLeft() {
 		return null;
 	}
 
 	@Override
-	public Node getRight() {
+	public INode getRight() {
 		return null;
 	}
 

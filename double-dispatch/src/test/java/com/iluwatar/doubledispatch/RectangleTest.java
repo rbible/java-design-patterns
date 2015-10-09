@@ -3,7 +3,7 @@ package com.iluwatar.doubledispatch;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.iluwatar.doubledispatch.Rectangle;
+import com.iluwatar.doubledispatch.base.Rectangle;
 
 /**
  * 

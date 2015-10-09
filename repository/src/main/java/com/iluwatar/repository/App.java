@@ -20,11 +20,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  *
  */
 public class App {
-	
+
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-				"applicationContext.xml");
-		PersonDao dao = context.getBean(PersonDao.class);
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		IPersonDao dao = context.getBean(IPersonDao.class);
 
 		Person peter = new Person("Peter", "Sagan");
 		Person nasta = new Person("Nasta", "Kuzminova");
@@ -43,7 +42,7 @@ public class App {
 		}
 
 		// Find Person by surname
-		System.out.println("Find by surname 'Sagan': "	+ dao.findBySurname("Sagan"));
+		System.out.println("Find by surname 'Sagan': " + dao.findBySurname("Sagan"));
 
 		// Update Person
 		nasta.setName("Barbora");

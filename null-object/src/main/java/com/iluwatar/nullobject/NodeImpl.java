@@ -5,13 +5,13 @@ package com.iluwatar.nullobject;
  * Implementation for binary tree's normal nodes.
  *
  */
-public class NodeImpl implements Node {
+public class NodeImpl implements INode {
 
 	private final String name;
-	private final Node left;
-	private final Node right;
+	private final INode left;
+	private final INode right;
 	
-	public NodeImpl(String name, Node left, Node right) {
+	public NodeImpl(String name, INode left, INode right) {
 		this.name = name;
 		this.left = left;
 		this.right = right;
@@ -23,12 +23,12 @@ public class NodeImpl implements Node {
 	}
 
 	@Override
-	public Node getLeft() {
+	public INode getLeft() {
 		return left;
 	}
 
 	@Override
-	public Node getRight() {
+	public INode getRight() {
 		return right;
 	}
 

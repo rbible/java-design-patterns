@@ -5,20 +5,20 @@ package com.iluwatar.event.aggregator;
  * Scout produces events.
  *
  */
-public class Scout extends EventEmitter {
+public class Scout extends AbsEventEmitter {
 	
 	public Scout() {
 		super();
 	}
 
-	public Scout(EventObserver obs) {
+	public Scout(IEventObserver obs) {
 		super(obs);
 	}
 	
 	@Override
 	public void timePasses(Weekday day) {
 		if (day.equals(Weekday.TUESDAY)) {
-			notifyObservers(Event.WARSHIPS_APPROACHING);
+			notifyObservers(EEvent.WARSHIPS_APPROACHING);
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package com.iluwatar.prototype;
 
-public class ElfMage extends Mage {
+public class ElfMage extends AbsMage {
 
 	public ElfMage() {
 	}
@@ -9,7 +9,7 @@ public class ElfMage extends Mage {
 	}
 
 	@Override
-	public Mage clone() throws CloneNotSupportedException {
+	public AbsMage clone() throws CloneNotSupportedException {
 		return new ElfMage(this);
 	}
 

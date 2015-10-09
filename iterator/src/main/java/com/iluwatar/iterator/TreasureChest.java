@@ -3,6 +3,8 @@ package com.iluwatar.iterator;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.iluwatar.iterator.enums.EItemType;
+
 /**
  * 
  * Collection class.
@@ -14,19 +16,19 @@ public class TreasureChest {
 
 	public TreasureChest() {
 		items = new ArrayList<>();
-		items.add(new Item(ItemType.POTION, "Potion of courage"));
-		items.add(new Item(ItemType.RING, "Ring of shadows"));
-		items.add(new Item(ItemType.POTION, "Potion of wisdom"));
-		items.add(new Item(ItemType.POTION, "Potion of blood"));
-		items.add(new Item(ItemType.WEAPON, "Sword of silver +1"));
-		items.add(new Item(ItemType.POTION, "Potion of rust"));
-		items.add(new Item(ItemType.POTION, "Potion of healing"));
-		items.add(new Item(ItemType.RING, "Ring of armor"));
-		items.add(new Item(ItemType.WEAPON, "Steel halberd"));
-		items.add(new Item(ItemType.WEAPON, "Dagger of poison"));
+		items.add(new Item(EItemType.POTION, "Potion of courage"));
+		items.add(new Item(EItemType.RING, "Ring of shadows"));
+		items.add(new Item(EItemType.POTION, "Potion of wisdom"));
+		items.add(new Item(EItemType.POTION, "Potion of blood"));
+		items.add(new Item(EItemType.WEAPON, "Sword of silver +1"));
+		items.add(new Item(EItemType.POTION, "Potion of rust"));
+		items.add(new Item(EItemType.POTION, "Potion of healing"));
+		items.add(new Item(EItemType.RING, "Ring of armor"));
+		items.add(new Item(EItemType.WEAPON, "Steel halberd"));
+		items.add(new Item(EItemType.WEAPON, "Dagger of poison"));
 	}
 
-	ItemIterator Iterator(ItemType type) {
+	IItemIterator Iterator(EItemType type) {
 		return new TreasureChestItemIterator(this, type);
 	}
 

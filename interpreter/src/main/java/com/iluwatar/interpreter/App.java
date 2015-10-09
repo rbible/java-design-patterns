@@ -2,6 +2,12 @@ package com.iluwatar.interpreter;
 
 import java.util.Stack;
 
+import com.iluwatar.interpreter.expression.AbsExpression;
+import com.iluwatar.interpreter.expression.MinusExpression;
+import com.iluwatar.interpreter.expression.MultiplyExpression;
+import com.iluwatar.interpreter.expression.NumberExpression;
+import com.iluwatar.interpreter.expression.PlusExpression;
+
 /**
  * 
  * Interpreter pattern breaks sentences into expressions (Expression) that can
@@ -18,43 +24,35 @@ public class App {
 	 */
 	public static void main(String[] args) {
 		String tokenString = "4 3 2 - 1 + *";
-		Stack<Expression> stack = new Stack<>();
+		Stack<AbsExpression> stack = new Stack<>();
 
 		String[] tokenList = tokenString.split(" ");
 		for (String s : tokenList) {
 			if (isOperator(s)) {
-				Expression rightExpression = stack.pop();
-				Expression leftExpression = stack.pop();
-				System.out
-						.println(String.format(
-								"popped from stack left: %d right: %d",
-								leftExpression.interpret(),
-								rightExpression.interpret()));
-				Expression operator = getOperatorInstance(s, leftExpression,
-						rightExpression);
+				AbsExpression rightExpression = stack.pop();
+				AbsExpression leftExpression = stack.pop();
+				System.out.println(String.format("popped from stack left: %d right: %d", leftExpression.interpret(),
+						rightExpression.interpret()));
+				AbsExpression operator = getOperatorInstance(s, leftExpression, rightExpression);
 				System.out.println(String.format("operator: %s", operator));
 				int result = operator.interpret();
 				NumberExpression resultExpression = new NumberExpression(result);
 				stack.push(resultExpression);
-				System.out.println(String.format("push result to stack: %d",
-						resultExpression.interpret()));
+				System.out.println(String.format("push result to stack: %d", resultExpression.interpret()));
 			} else {
-				Expression i = new NumberExpression(s);
+				AbsExpression i = new NumberExpression(s);
 				stack.push(i);
-				System.out.println(String.format("push to stack: %d",
-						i.interpret()));
+				System.out.println(String.format("push to stack: %d", i.interpret()));
 			}
 		}
-		System.out
-				.println(String.format("result: %d", stack.pop().interpret()));
+		System.out.println(String.format("result: %d", stack.pop().interpret()));
 	}
 
 	public static boolean isOperator(String s) {
 		return s.equals("+") || s.equals("-") || s.equals("*");
 	}
 
-	public static Expression getOperatorInstance(String s, Expression left,
-			Expression right) {
+	public static AbsExpression getOperatorInstance(String s, AbsExpression left, AbsExpression right) {
 		switch (s) {
 		case "+":
 			return new PlusExpression(left, right);

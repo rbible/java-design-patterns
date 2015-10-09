@@ -5,7 +5,7 @@ package com.iluwatar.templatemethod;
  * SubtleMethod implementation of StealingMethod.
  *
  */
-public class SubtleMethod extends StealingMethod {
+public class SubtleMethod extends AbsStealingMethod {
 
 	@Override
 	protected String pickTarget() {

@@ -10,7 +10,7 @@ package com.iluwatar.singleton;
  *
  */
 public class ThreadSafeDoubleCheckLocking {
-	
+
 	private static volatile ThreadSafeDoubleCheckLocking INSTANCE;
 
 	/**
@@ -18,20 +18,20 @@ public class ThreadSafeDoubleCheckLocking {
 	 * 
 	 */
 	private ThreadSafeDoubleCheckLocking() {
-		//to prevent instantiating by Reflection call 
-		if(INSTANCE != null)
+		// to prevent instantiating by Reflection call
+		if (INSTANCE != null)
 			throw new IllegalStateException("Already initialized.");
 	}
-	
+
 	public static ThreadSafeDoubleCheckLocking getInstance() {
-		//local variable increases performance by 25 percent 
-		//Joshua Bloch "Effective Java, Second Edition", p. 283-284
+		// local variable increases performance by 25 percent
+		// Joshua Bloch "Effective Java, Second Edition", p. 283-284
 		ThreadSafeDoubleCheckLocking result = INSTANCE;
 		if (result == null) {
 			synchronized (ThreadSafeDoubleCheckLocking.class) {
 				result = INSTANCE;
 				if (result == null) {
-					INSTANCE = result = new ThreadSafeDoubleCheckLocking();
+					INSTANCE = (result = new ThreadSafeDoubleCheckLocking());
 				}
 			}
 		}

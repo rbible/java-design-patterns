@@ -5,19 +5,19 @@ package com.iluwatar.prototype;
  * Concrete factory class.
  * 
  */
-public class HeroFactoryImpl implements HeroFactory {
+public class HeroFactoryImpl implements IHeroFactory {
 
-	private Mage mage;
-	private Warlord warlord;
-	private Beast beast;
+	private AbsMage mage;
+	private AbsWarlord warlord;
+	private AbsBeast beast;
 
-	public HeroFactoryImpl(Mage mage, Warlord warlord, Beast beast) {
+	public HeroFactoryImpl(AbsMage mage, AbsWarlord warlord, AbsBeast beast) {
 		this.mage = mage;
 		this.warlord = warlord;
 		this.beast = beast;
 	}
 
-	public Mage createMage() {
+	public AbsMage createMage() {
 		try {
 			return mage.clone();
 		} catch (CloneNotSupportedException e) {
@@ -25,7 +25,7 @@ public class HeroFactoryImpl implements HeroFactory {
 		}
 	}
 
-	public Warlord createWarlord() {
+	public AbsWarlord createWarlord() {
 		try {
 			return warlord.clone();
 		} catch (CloneNotSupportedException e) {
@@ -33,7 +33,7 @@ public class HeroFactoryImpl implements HeroFactory {
 		}
 	}
 
-	public Beast createBeast() {
+	public AbsBeast createBeast() {
 		try {
 			return beast.clone();
 		} catch (CloneNotSupportedException e) {

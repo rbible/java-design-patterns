@@ -1,5 +1,7 @@
 package com.iluwatar.iterator;
 
+import com.iluwatar.iterator.enums.EItemType;
+
 /**
  * 
  * Iterator (ItemIterator) adds abstraction layer on top of a collection
@@ -12,28 +14,28 @@ public class App {
 	public static void main(String[] args) {
 		TreasureChest chest = new TreasureChest();
 
-		ItemIterator ringIterator = chest.Iterator(ItemType.RING);
+		IItemIterator ringIterator = chest.Iterator(EItemType.RING);
 		while (ringIterator.hasNext()) {
 			System.out.println(ringIterator.next());
 		}
 
 		System.out.println("----------");
 
-		ItemIterator potionIterator = chest.Iterator(ItemType.POTION);
+		IItemIterator potionIterator = chest.Iterator(EItemType.POTION);
 		while (potionIterator.hasNext()) {
 			System.out.println(potionIterator.next());
 		}
 
 		System.out.println("----------");
 
-		ItemIterator weaponIterator = chest.Iterator(ItemType.WEAPON);
+		IItemIterator weaponIterator = chest.Iterator(EItemType.WEAPON);
 		while (weaponIterator.hasNext()) {
 			System.out.println(weaponIterator.next());
 		}
 
 		System.out.println("----------");
 
-		ItemIterator it = chest.Iterator(ItemType.ANY);
+		IItemIterator it = chest.Iterator(EItemType.ANY);
 		while (it.hasNext()) {
 			System.out.println(it.next());
 		}

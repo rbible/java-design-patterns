@@ -1,10 +1,10 @@
 package com.iluwatar.observer.generic;
 
-import com.iluwatar.observer.WeatherType;
+import com.iluwatar.observer.EWeatherType;
 
-public class GHobbits implements Race {
+public class GHobbits implements IRace {
     @Override
-    public void update(GWeather weather, WeatherType weatherType) {
+    public void update(GWeather weather, EWeatherType weatherType) {
         switch (weatherType) {
             case COLD:
                 System.out.println("The hobbits are shivering in the cold weather.");

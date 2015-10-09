@@ -5,7 +5,7 @@ package com.iluwatar.threadpool;
  * CoffeeMakingTask is a concrete task
  * 
  */
-public class CoffeeMakingTask extends Task {
+public class CoffeeMakingTask extends AbsTask {
 
 	private static final int TIME_PER_CUP = 300;
 	

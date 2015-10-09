@@ -5,7 +5,7 @@ package com.iluwatar.templatemethod;
  * HitAndRunMethod implementation of StealingMethod.
  *
  */
-public class HitAndRunMethod extends StealingMethod {
+public class HitAndRunMethod extends AbsStealingMethod {
 
 	@Override
 	protected String pickTarget() {

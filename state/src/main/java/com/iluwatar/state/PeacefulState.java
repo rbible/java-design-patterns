@@ -5,7 +5,7 @@ package com.iluwatar.state;
  * Peaceful state.
  *
  */
-public class PeacefulState implements State {
+public class PeacefulState implements IState {
 
 	private Mammoth mammoth;
 

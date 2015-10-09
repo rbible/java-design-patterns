@@ -3,6 +3,8 @@ package com.iluwatar.flyweight;
 import java.util.EnumMap;
 import java.util.Map;
 
+import com.iluwatar.flyweight.enums.EPotionType;
+
 /**
  * 
  * PotionFactory is the Flyweight in this example.
@@ -13,14 +15,14 @@ import java.util.Map;
  */
 public class PotionFactory {
 
-	private final Map<PotionType, Potion> potions;
+	private final Map<EPotionType, IPotion> potions;
 
 	public PotionFactory() {
-		potions = new EnumMap<>(PotionType.class);
+		potions = new EnumMap<>(EPotionType.class);
 	}
 
-	Potion createPotion(PotionType type) {
-		Potion potion = potions.get(type);
+	IPotion createPotion(EPotionType type) {
+		IPotion potion = potions.get(type);
 		if (potion == null) {
 			switch (type) {
 			case HEALING:

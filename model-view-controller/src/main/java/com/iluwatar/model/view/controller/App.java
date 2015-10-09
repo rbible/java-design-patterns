@@ -1,5 +1,9 @@
 package com.iluwatar.model.view.controller;
 
+import com.iluwatar.model.view.controller.enums.EFatigue;
+import com.iluwatar.model.view.controller.enums.EHealth;
+import com.iluwatar.model.view.controller.enums.ENourishment;
+
 /**
  * 
  * Model-View-Controller is a pattern for implementing user interfaces. It divides the application
@@ -19,15 +23,15 @@ public class App {
 	
     public static void main( String[] args ) {
     	// create model, view and controller
-    	GiantModel giant = new GiantModel(Health.HEALTHY, Fatigue.ALERT, Nourishment.SATURATED);
+    	GiantModel model = new GiantModel(EHealth.HEALTHY, EFatigue.ALERT, ENourishment.SATURATED);
     	GiantView view = new GiantView();
-    	GiantController controller = new GiantController(giant, view);
+    	GiantController controller = new GiantController(model, view);
     	// initial display
     	controller.updateView();
     	// controller receives some interactions that affect the giant
-    	controller.setHealth(Health.WOUNDED);
-    	controller.setNourishment(Nourishment.HUNGRY);
-    	controller.setFatigue(Fatigue.TIRED);
+    	controller.setHealth(EHealth.WOUNDED);
+    	controller.setNourishment(ENourishment.HUNGRY);
+    	controller.setFatigue(EFatigue.TIRED);
     	// redisplay
     	controller.updateView();
     }

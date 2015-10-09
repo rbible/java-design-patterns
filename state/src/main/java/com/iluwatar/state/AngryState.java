@@ -5,7 +5,7 @@ package com.iluwatar.state;
  * Angry state.
  *
  */
-public class AngryState implements State {
+public class AngryState implements IState {
 
 	private Mammoth mammoth;
 

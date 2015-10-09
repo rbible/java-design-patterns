@@ -1,10 +1,10 @@
 package com.iluwatar.observer.generic;
 
-import com.iluwatar.observer.WeatherType;
+import com.iluwatar.observer.EWeatherType;
 
-public class GOrcs implements Race {
+public class GOrcs implements IRace {
     @Override
-    public void update(GWeather weather, WeatherType weatherType) {
+    public void update(GWeather weather, EWeatherType weatherType) {
         switch (weatherType) {
             case COLD:
                 System.out.println("The orcs are freezing cold.");

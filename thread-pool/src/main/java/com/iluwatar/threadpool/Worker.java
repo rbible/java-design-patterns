@@ -7,9 +7,9 @@ package com.iluwatar.threadpool;
  */
 public class Worker implements Runnable {
 	
-	private final Task task;
+	private final AbsTask task;
 
-	public Worker(final Task task) {
+	public Worker(final AbsTask task) {
 		this.task = task;
 	}
 	

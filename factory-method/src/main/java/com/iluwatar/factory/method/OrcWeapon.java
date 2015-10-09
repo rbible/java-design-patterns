@@ -1,10 +1,10 @@
 package com.iluwatar.factory.method;
 
-public class OrcWeapon implements Weapon {
+public class OrcWeapon implements IWeapon {
 
-	private WeaponType weaponType;
+	private EWeaponType weaponType;
 
-	public OrcWeapon(WeaponType weaponType) {
+	public OrcWeapon(EWeaponType weaponType) {
 		this.weaponType = weaponType;
 	}
 

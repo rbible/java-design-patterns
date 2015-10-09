@@ -1,5 +1,9 @@
 package com.iluwatar.model.view.controller;
 
+import com.iluwatar.model.view.controller.enums.EFatigue;
+import com.iluwatar.model.view.controller.enums.EHealth;
+import com.iluwatar.model.view.controller.enums.ENourishment;
+
 /**
  * 
  * GiantModel contains the giant data
@@ -7,37 +11,37 @@ package com.iluwatar.model.view.controller;
  */
 public class GiantModel {
 	
-	private Health health;
-	private Fatigue fatigue;
-	private Nourishment nourishment;
+	private EHealth health;
+	private EFatigue fatigue;
+	private ENourishment nourishment;
 
-	GiantModel(Health health, Fatigue fatigue, Nourishment nourishment) {
+	GiantModel(EHealth health, EFatigue fatigue, ENourishment nourishment) {
 		this.health = health;
 		this.fatigue = fatigue;
 		this.nourishment = nourishment;	
 	}
 
-	public Health getHealth() {
+	public EHealth getHealth() {
 		return health;
 	}
 
-	public void setHealth(Health health) {
+	public void setHealth(EHealth health) {
 		this.health = health;
 	}
 
-	public Fatigue getFatigue() {
+	public EFatigue getFatigue() {
 		return fatigue;
 	}
 
-	public void setFatigue(Fatigue fatigue) {
+	public void setFatigue(EFatigue fatigue) {
 		this.fatigue = fatigue;
 	}
 
-	public Nourishment getNourishment() {
+	public ENourishment getNourishment() {
 		return nourishment;
 	}
 
-	public void setNourishment(Nourishment nourishment) {
+	public void setNourishment(ENourishment nourishment) {
 		this.nourishment = nourishment;
 	}
 	

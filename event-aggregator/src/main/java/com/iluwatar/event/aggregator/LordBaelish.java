@@ -5,20 +5,20 @@ package com.iluwatar.event.aggregator;
  * LordBaelish produces events.
  *
  */
-public class LordBaelish extends EventEmitter {
+public class LordBaelish extends AbsEventEmitter {
 	
 	public LordBaelish() {
 		super();
 	}
 
-	public LordBaelish(EventObserver obs) {
+	public LordBaelish(IEventObserver obs) {
 		super(obs);
 	}
 	
 	@Override
 	public void timePasses(Weekday day) {
 		if (day.equals(Weekday.FRIDAY)) {
-			notifyObservers(Event.STARK_SIGHTED);
+			notifyObservers(EEvent.STARK_SIGHTED);
 		}
 	}
 }

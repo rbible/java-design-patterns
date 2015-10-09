@@ -13,27 +13,27 @@ public class App {
 
 	public static void main(String[] args) {
 		/* set up */
-		Prototype charProto = new Character();
-		charProto.set(Stats.STRENGTH, 10);
-		charProto.set(Stats.AGILITY, 10);
-		charProto.set(Stats.ARMOR, 10);
-		charProto.set(Stats.ATTACK_POWER, 10);
+		IPrototype charProto = new Character();
+		charProto.set(EStats.STRENGTH, 10);
+		charProto.set(EStats.AGILITY, 10);
+		charProto.set(EStats.ARMOR, 10);
+		charProto.set(EStats.ATTACK_POWER, 10);
 
 		Character mageProto = new Character(Type.MAGE, charProto);
-		mageProto.set(Stats.INTELLECT, 15);
-		mageProto.set(Stats.SPIRIT, 10);
+		mageProto.set(EStats.INTELLECT, 15);
+		mageProto.set(EStats.SPIRIT, 10);
 
 		Character warProto = new Character(Type.WARRIOR, charProto);
-		warProto.set(Stats.RAGE, 15);
-		warProto.set(Stats.ARMOR, 15); // boost default armor for warrior
+		warProto.set(EStats.RAGE, 15);
+		warProto.set(EStats.ARMOR, 15); // boost default armor for warrior
 
 		Character rogueProto = new Character(Type.ROGUE, charProto);
-		rogueProto.set(Stats.ENERGY, 15);
-		rogueProto.set(Stats.AGILITY, 15); // boost default agility for rogue
+		rogueProto.set(EStats.ENERGY, 15);
+		rogueProto.set(EStats.AGILITY, 15); // boost default agility for rogue
 
 		/* usage */
 		Character mag = new Character("Player_1", mageProto);
-		mag.set(Stats.ARMOR, 8);
+		mag.set(EStats.ARMOR, 8);
 		System.out.println(mag);
 
 		Character warrior = new Character("Player_2", warProto);
@@ -43,7 +43,7 @@ public class App {
 		System.out.println(rogue);
 
 		Character rogueDouble = new Character("Player_4", rogue);
-		rogueDouble.set(Stats.ATTACK_POWER, 12);
+		rogueDouble.set(EStats.ATTACK_POWER, 12);
 		System.out.println(rogueDouble);
 	}
 }

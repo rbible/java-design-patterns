@@ -1,6 +1,6 @@
 package com.iluwatar.prototype;
 
-public class ElfWarlord extends Warlord {
+public class ElfWarlord extends AbsWarlord {
 
 	public ElfWarlord() {
 	}
@@ -9,7 +9,7 @@ public class ElfWarlord extends Warlord {
 	}
 
 	@Override
-	public Warlord clone() throws CloneNotSupportedException {
+	public AbsWarlord clone() throws CloneNotSupportedException {
 		return new ElfWarlord(this);
 	}
 

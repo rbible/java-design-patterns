@@ -1,5 +1,8 @@
 package com.iluwatar.front.controller;
 
+import com.iluwatar.front.controller.command.ICommand;
+import com.iluwatar.front.controller.command.UnknownCommand;
+
 /**
  * 
  * FrontController is the handler class that takes in all the requests and
@@ -9,19 +12,21 @@ package com.iluwatar.front.controller;
 public class FrontController {
 	
 	public void handleRequest(String request) {
-		Command command = getCommand(request);
+		ICommand command = getCommand(request);
 		command.process();
 	}
 	
-	private Command getCommand(String request) {
+	@SuppressWarnings("rawtypes")
+	private ICommand getCommand(String request) {
 		Class commandClass = getCommandClass(request);
 		try {
-			return (Command) commandClass.newInstance();
+			return (ICommand) commandClass.newInstance();
 		} catch (Exception e) {
 			throw new ApplicationException(e);
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
 	private Class getCommandClass(String request) {
 		Class result;
 		try {

@@ -1,5 +1,9 @@
 package com.iluwatar.model.view.controller;
 
+import com.iluwatar.model.view.controller.enums.EFatigue;
+import com.iluwatar.model.view.controller.enums.EHealth;
+import com.iluwatar.model.view.controller.enums.ENourishment;
+
 /**
  * 
  * GiantController can update the giant data and redraw it using the view.
@@ -15,27 +19,27 @@ public class GiantController {
 		this.view = view;
 	}
 	
-	public Health getHealth() {
+	public EHealth getHealth() {
 		return giant.getHealth();
 	}
 
-	public void setHealth(Health health) {
+	public void setHealth(EHealth health) {
 		this.giant.setHealth(health);
 	}
 
-	public Fatigue getFatigue() {
+	public EFatigue getFatigue() {
 		return giant.getFatigue();
 	}
 
-	public void setFatigue(Fatigue fatigue) {
+	public void setFatigue(EFatigue fatigue) {
 		this.giant.setFatigue(fatigue);
 	}
 
-	public Nourishment getNourishment() {
+	public ENourishment getNourishment() {
 		return giant.getNourishment();
 	}
 
-	public void setNourishment(Nourishment nourishment) {
+	public void setNourishment(ENourishment nourishment) {
 		this.giant.setNourishment(nourishment);
 	}
 	

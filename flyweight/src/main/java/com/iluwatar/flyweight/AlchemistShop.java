@@ -3,6 +3,8 @@ package com.iluwatar.flyweight;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.iluwatar.flyweight.enums.EPotionType;
+
 /**
  * 
  * AlchemistShop holds potions on its shelves.
@@ -11,8 +13,8 @@ import java.util.List;
  */
 public class AlchemistShop {
 
-	private List<Potion> topShelf;
-	private List<Potion> bottomShelf;
+	private List<IPotion> topShelf;
+	private List<IPotion> bottomShelf;
 
 	public AlchemistShop() {
 		topShelf = new ArrayList<>();
@@ -24,33 +26,33 @@ public class AlchemistShop {
 
 		PotionFactory factory = new PotionFactory();
 
-		topShelf.add(factory.createPotion(PotionType.INVISIBILITY));
-		topShelf.add(factory.createPotion(PotionType.INVISIBILITY));
-		topShelf.add(factory.createPotion(PotionType.STRENGTH));
-		topShelf.add(factory.createPotion(PotionType.HEALING));
-		topShelf.add(factory.createPotion(PotionType.INVISIBILITY));
-		topShelf.add(factory.createPotion(PotionType.STRENGTH));
-		topShelf.add(factory.createPotion(PotionType.HEALING));
-		topShelf.add(factory.createPotion(PotionType.HEALING));
+		topShelf.add(factory.createPotion(EPotionType.INVISIBILITY));
+		topShelf.add(factory.createPotion(EPotionType.INVISIBILITY));
+		topShelf.add(factory.createPotion(EPotionType.STRENGTH));
+		topShelf.add(factory.createPotion(EPotionType.HEALING));
+		topShelf.add(factory.createPotion(EPotionType.INVISIBILITY));
+		topShelf.add(factory.createPotion(EPotionType.STRENGTH));
+		topShelf.add(factory.createPotion(EPotionType.HEALING));
+		topShelf.add(factory.createPotion(EPotionType.HEALING));
 
-		bottomShelf.add(factory.createPotion(PotionType.POISON));
-		bottomShelf.add(factory.createPotion(PotionType.POISON));
-		bottomShelf.add(factory.createPotion(PotionType.POISON));
-		bottomShelf.add(factory.createPotion(PotionType.HOLY_WATER));
-		bottomShelf.add(factory.createPotion(PotionType.HOLY_WATER));
+		bottomShelf.add(factory.createPotion(EPotionType.POISON));
+		bottomShelf.add(factory.createPotion(EPotionType.POISON));
+		bottomShelf.add(factory.createPotion(EPotionType.POISON));
+		bottomShelf.add(factory.createPotion(EPotionType.HOLY_WATER));
+		bottomShelf.add(factory.createPotion(EPotionType.HOLY_WATER));
 	}
 
 	public void enumerate() {
 
 		System.out.println("Enumerating top shelf potions\n");
 
-		for (Potion p : topShelf) {
+		for (IPotion p : topShelf) {
 			p.drink();
 		}
 
 		System.out.println("\nEnumerating bottom shelf potions\n");
 
-		for (Potion p : bottomShelf) {
+		for (IPotion p : bottomShelf) {
 			p.drink();
 		}
 	}

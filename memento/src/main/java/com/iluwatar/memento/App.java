@@ -12,9 +12,9 @@ import java.util.Stack;
 public class App {
 
 	public static void main(String[] args) {
-		Stack<StarMemento> states = new Stack<>();
+		Stack<IStarMemento> states = new Stack<>();
 
-		Star star = new Star(StarType.SUN, 10000000, 500000);
+		Star star = new Star(EStarType.SUN, 10000000, 500000);
 		System.out.println(star);
 		states.add(star.getMemento());
 		star.timePasses();

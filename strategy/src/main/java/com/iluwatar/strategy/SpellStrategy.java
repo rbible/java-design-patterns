@@ -5,7 +5,7 @@ package com.iluwatar.strategy;
  * Spell strategy.
  *
  */
-public class SpellStrategy implements DragonSlayingStrategy {
+public class SpellStrategy implements IDragonSlayingStrategy {
 
 	@Override
 	public void execute() {

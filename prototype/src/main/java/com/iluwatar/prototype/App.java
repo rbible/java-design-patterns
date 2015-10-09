@@ -10,13 +10,12 @@ package com.iluwatar.prototype;
 public class App {
 
 	public static void main(String[] args) {
-		HeroFactory factory;
-		Mage mage;
-		Warlord warlord;
-		Beast beast;
+		IHeroFactory factory;
+		AbsMage mage;
+		AbsWarlord warlord;
+		AbsBeast beast;
 
-		factory = new HeroFactoryImpl(new ElfMage(), new ElfWarlord(),
-				new ElfBeast());
+		factory = new HeroFactoryImpl(new ElfMage(), new ElfWarlord(), new ElfBeast());
 		mage = factory.createMage();
 		warlord = factory.createWarlord();
 		beast = factory.createBeast();
@@ -24,8 +23,7 @@ public class App {
 		System.out.println(warlord);
 		System.out.println(beast);
 
-		factory = new HeroFactoryImpl(new OrcMage(), new OrcWarlord(),
-				new OrcBeast());
+		factory = new HeroFactoryImpl(new OrcMage(), new OrcWarlord(), new OrcBeast());
 		mage = factory.createMage();
 		warlord = factory.createWarlord();
 		beast = factory.createBeast();

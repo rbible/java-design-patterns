@@ -5,7 +5,7 @@ package com.iluwatar.threadpool;
  * PotatoPeelingTask is a concrete task
  *
  */
-public class PotatoPeelingTask extends Task {
+public class PotatoPeelingTask extends AbsTask {
 
 	private static final int TIME_PER_POTATO = 500;
 	

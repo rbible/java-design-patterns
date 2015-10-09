@@ -9,21 +9,21 @@ public class Servant {
 		this.name = name;
 	}
 
-	public void feed(Royalty r){
+	public void feed(IRoyalty r){
 		r.getFed();
 	}
 	
-	public void giveWine(Royalty r){
+	public void giveWine(IRoyalty r){
 		r.getDrink();
 	}
 	
-	public void GiveCompliments(Royalty r){
+	public void GiveCompliments(IRoyalty r){
 		r.receiveCompliments();
 	}
 	
-	public boolean checkIfYouWillBeHanged(ArrayList<Royalty> tableGuests){
+	public boolean checkIfYouWillBeHanged(ArrayList<IRoyalty> tableGuests){
 		boolean anotherDay = true;
-		for( Royalty r : tableGuests )
+		for( IRoyalty r : tableGuests )
 			if( !r.getMood() ) anotherDay = false;
 			
 		return anotherDay;

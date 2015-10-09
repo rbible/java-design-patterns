@@ -14,17 +14,17 @@ import java.io.IOException;
  *
  */
 public class App {
-	
-    public static void main( String[] args ) throws IOException {
 
-    	new SimpleFileWriter("testfile.txt", new FileWriterAction() {
+	public static void main(String[] args) throws IOException {
 
-    		@Override
+		new SimpleFileWriter("testfile.txt", new IFileWriterAction() {
+
+			@Override
 			public void writeFile(FileWriter writer) throws IOException {
-    			writer.write("Hello");
-    			writer.append(" ");
-    			writer.append("there!");
+				writer.write("Hello");
+				writer.append(" ");
+				writer.append("there!");
 			}
-    	});
-    }
+		});
+	}
 }

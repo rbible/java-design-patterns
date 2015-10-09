@@ -12,7 +12,7 @@ package com.iluwatar.poison.pill;
 public class App {
 
 	public static void main(String[] args) {
-		MessageQueue queue = new SimpleMessageQueue(10000);
+		IMessageQueue queue = new SimpleMessageQueue(10000);
 
 		final Producer producer = new Producer("PRODUCER_1", queue);
 		final Consumer consumer = new Consumer("CONSUMER_1", queue);

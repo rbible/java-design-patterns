@@ -6,18 +6,18 @@ package com.iluwatar.event.aggregator;
  * to listeners.
  *
  */
-public class KingsHand extends EventEmitter implements EventObserver {
+public class KingsHand extends AbsEventEmitter implements IEventObserver {
 
 	public KingsHand() {
 		super();
 	}
 
-	public KingsHand(EventObserver obs) {
+	public KingsHand(IEventObserver obs) {
 		super(obs);
 	}
 	
 	@Override
-	public void onEvent(Event e) {
+	public void onEvent(EEvent e) {
 		notifyObservers(e);
 	}
 

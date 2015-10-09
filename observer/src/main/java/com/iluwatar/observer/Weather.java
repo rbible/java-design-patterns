@@ -11,31 +11,31 @@ import java.util.List;
  */
 public class Weather {
 
-	private WeatherType currentWeather;
-	private List<WeatherObserver> observers;
+	private EWeatherType currentWeather;
+	private List<IWeatherObserver> observers;
 
 	public Weather() {
 		observers = new ArrayList<>();
-		currentWeather = WeatherType.SUNNY;
+		currentWeather = EWeatherType.SUNNY;
 	}
 
-	public void addObserver(WeatherObserver obs) {
+	public void addObserver(IWeatherObserver obs) {
 		observers.add(obs);
 	}
 
-	public void removeObserver(WeatherObserver obs) {
+	public void removeObserver(IWeatherObserver obs) {
 		observers.remove(obs);
 	}
 
 	public void timePasses() {
-		WeatherType[] enumValues = WeatherType.values();
+		EWeatherType[] enumValues = EWeatherType.values();
 		currentWeather = enumValues[(currentWeather.ordinal() + 1) % enumValues.length];
 		System.out.println("The weather changed to " + currentWeather + ".");
 		notifyObservers();
 	}
 
 	private void notifyObservers() {
-		for (WeatherObserver obs : observers) {
+		for (IWeatherObserver obs : observers) {
 			obs.update(currentWeather);
 		}
 	}

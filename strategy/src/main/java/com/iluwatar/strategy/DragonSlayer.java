@@ -7,13 +7,13 @@ package com.iluwatar.strategy;
  */
 public class DragonSlayer {
 
-	private DragonSlayingStrategy strategy;
+	private IDragonSlayingStrategy strategy;
 
-	public DragonSlayer(DragonSlayingStrategy strategy) {
+	public DragonSlayer(IDragonSlayingStrategy strategy) {
 		this.strategy = strategy;
 	}
 
-	public void changeStrategy(DragonSlayingStrategy strategy) {
+	public void changeStrategy(IDragonSlayingStrategy strategy) {
 		this.strategy = strategy;
 	}
 

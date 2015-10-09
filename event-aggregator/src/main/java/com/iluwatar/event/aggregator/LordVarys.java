@@ -5,20 +5,20 @@ package com.iluwatar.event.aggregator;
  * LordVarys produces events.
  *
  */
-public class LordVarys extends EventEmitter {
+public class LordVarys extends AbsEventEmitter {
 	
 	public LordVarys() {
 		super();
 	}
 
-	public LordVarys(EventObserver obs) {
+	public LordVarys(IEventObserver obs) {
 		super(obs);
 	}
 	
 	@Override
 	public void timePasses(Weekday day) {
 		if (day.equals(Weekday.SATURDAY)) {
-			notifyObservers(Event.TRAITOR_DETECTED);
+			notifyObservers(EEvent.TRAITOR_DETECTED);
 		}
 	}
 }

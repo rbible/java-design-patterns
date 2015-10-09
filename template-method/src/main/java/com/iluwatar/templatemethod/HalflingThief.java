@@ -7,9 +7,9 @@ package com.iluwatar.templatemethod;
  */
 public class HalflingThief {
 
-	private StealingMethod method;
+	private AbsStealingMethod method;
 
-	public HalflingThief(StealingMethod method) {
+	public HalflingThief(AbsStealingMethod method) {
 		this.method = method;
 	}
 
@@ -17,7 +17,7 @@ public class HalflingThief {
 		method.steal();
 	}
 
-	public void changeMethod(StealingMethod method) {
+	public void changeMethod(AbsStealingMethod method) {
 		this.method = method;
 	}
 }

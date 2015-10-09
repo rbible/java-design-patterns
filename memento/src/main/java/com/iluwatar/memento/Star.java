@@ -7,11 +7,11 @@ package com.iluwatar.memento;
  */
 public class Star {
 
-	private StarType type;
+	private EStarType type;
 	private int ageYears;
 	private int massTons;
 
-	public Star(StarType startType, int startAge, int startMass) {
+	public Star(EStarType startType, int startAge, int startMass) {
 		this.type = startType;
 		this.ageYears = startAge;
 		this.massTons = startMass;
@@ -22,16 +22,16 @@ public class Star {
 		massTons *= 8;
 		switch (type) {
 		case RED_GIANT:
-			type = StarType.WHITE_DWARF;
+			type = EStarType.WHITE_DWARF;
 			break;
 		case SUN:
-			type = StarType.RED_GIANT;
+			type = EStarType.RED_GIANT;
 			break;
 		case SUPERNOVA:
-			type = StarType.DEAD;
+			type = EStarType.DEAD;
 			break;
 		case WHITE_DWARF:
-			type = StarType.SUPERNOVA;
+			type = EStarType.SUPERNOVA;
 			break;
 		case DEAD:
 			ageYears *= 2;
@@ -42,7 +42,7 @@ public class Star {
 		}
 	}
 
-	StarMemento getMemento() {
+	IStarMemento getMemento() {
 
 		StarMementoInternal state = new StarMementoInternal();
 		state.setAgeYears(ageYears);
@@ -52,7 +52,7 @@ public class Star {
 
 	}
 
-	void setMemento(StarMemento memento) {
+	void setMemento(IStarMemento memento) {
 
 		StarMementoInternal state = (StarMementoInternal) memento;
 		this.type = state.getType();
@@ -72,17 +72,17 @@ public class Star {
 	 * StarMemento implementation
 	 * 
 	 */
-	private static class StarMementoInternal implements StarMemento {
+	private static class StarMementoInternal implements IStarMemento {
 
-		private StarType type;
+		private EStarType type;
 		private int ageYears;
 		private int massTons;
 
-		public StarType getType() {
+		public EStarType getType() {
 			return type;
 		}
 
-		public void setType(StarType type) {
+		public void setType(EStarType type) {
 			this.type = type;
 		}
 

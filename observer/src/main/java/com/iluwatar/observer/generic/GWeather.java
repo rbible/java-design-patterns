@@ -1,17 +1,17 @@
 package com.iluwatar.observer.generic;
 
-import com.iluwatar.observer.WeatherType;
+import com.iluwatar.observer.EWeatherType;
 
-public class GWeather extends Observable<GWeather, Race, WeatherType> {
+public class GWeather extends AbsObservable<GWeather, IRace, EWeatherType> {
 
-    private WeatherType currentWeather;
+    private EWeatherType currentWeather;
 
     public GWeather() {
-        currentWeather = WeatherType.SUNNY;
+        currentWeather = EWeatherType.SUNNY;
     }
 
     public void timePasses() {
-        WeatherType[] enumValues = WeatherType.values();
+        EWeatherType[] enumValues = EWeatherType.values();
         currentWeather = enumValues[(currentWeather.ordinal() + 1) % enumValues.length];
         System.out.println("The weather changed to " + currentWeather + ".");
         notifyObservers(currentWeather);

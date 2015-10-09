@@ -1,9 +1,9 @@
 package com.iluwatar.observer;
 
-public class Orcs implements WeatherObserver {
+public class Orcs implements IWeatherObserver {
 
 	@Override
-	public void update(WeatherType currentWeather) {
+	public void update(EWeatherType currentWeather) {
 		switch (currentWeather) {
 		case COLD:
 			System.out.println("The orcs are freezing cold.");

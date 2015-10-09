@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import com.iluwatar.facade.service.AbsDwarvenMineWorker;
+import com.iluwatar.facade.service.DwarvenCartOperator;
+import com.iluwatar.facade.service.DwarvenGoldDigger;
+import com.iluwatar.facade.service.DwarvenTunnelDigger;
+
 /**
  * 
  * DwarvenGoldmineFacade provides a single interface
@@ -16,7 +21,7 @@ import java.util.List;
  */
 public class DwarvenGoldmineFacade {
 
-	private final List<DwarvenMineWorker> workers;
+	private final List<AbsDwarvenMineWorker> workers;
 
 	public DwarvenGoldmineFacade() {
 		workers = new ArrayList<>();
@@ -26,19 +31,19 @@ public class DwarvenGoldmineFacade {
 	}
 
 	public void startNewDay() {
-        makeActions(workers, DwarvenMineWorker.Action.WAKE_UP, DwarvenMineWorker.Action.GO_TO_MINE);
+        makeActions(workers, AbsDwarvenMineWorker.Action.WAKE_UP, AbsDwarvenMineWorker.Action.GO_TO_MINE);
 	}
 
 	public void digOutGold() {
-        makeActions(workers, DwarvenMineWorker.Action.WORK);
+        makeActions(workers, AbsDwarvenMineWorker.Action.WORK);
 	}
 
 	public void endDay() {
-        makeActions(workers, DwarvenMineWorker.Action.GO_HOME, DwarvenMineWorker.Action.GO_TO_SLEEP);
+        makeActions(workers, AbsDwarvenMineWorker.Action.GO_HOME, AbsDwarvenMineWorker.Action.GO_TO_SLEEP);
 	}
 
-    private void makeActions(Collection<DwarvenMineWorker> workers, DwarvenMineWorker.Action... actions) {
-        for (DwarvenMineWorker worker : workers) {
+    private void makeActions(Collection<AbsDwarvenMineWorker> workers, AbsDwarvenMineWorker.Action... actions) {
+        for (AbsDwarvenMineWorker worker : workers) {
             worker.action(actions);
         }
     }

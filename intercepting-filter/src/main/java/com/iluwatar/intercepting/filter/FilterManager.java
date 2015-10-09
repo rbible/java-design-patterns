@@ -14,7 +14,7 @@ public class FilterManager {
 		filterChain = new FilterChain(target);
 	}
 
-	public void addFilter(Filter filter) {
+	public void addFilter(IFilter filter) {
 		filterChain.addFilter(filter);
 	}
 

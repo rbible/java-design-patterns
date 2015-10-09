@@ -1,11 +1,13 @@
 package com.iluwatar.iterator;
 
+import com.iluwatar.iterator.enums.EItemType;
+
 public class Item {
 
-	private ItemType type;
+	private EItemType type;
 	private String name;
 
-	public Item(ItemType type, String name) {
+	public Item(EItemType type, String name) {
 		this.setType(type);
 		this.name = name;
 	}
@@ -15,11 +17,11 @@ public class Item {
 		return name;
 	}
 
-	public ItemType getType() {
+	public EItemType getType() {
 		return type;
 	}
 
-	public void setType(ItemType type) {
+	public void setType(EItemType type) {
 		this.type = type;
 	}
 }

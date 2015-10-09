@@ -1,5 +1,12 @@
 package com.iluwatar.visitor;
 
+import com.iluwatar.visitor.unit.Commander;
+import com.iluwatar.visitor.unit.Sergeant;
+import com.iluwatar.visitor.unit.Soldier;
+import com.iluwatar.visitor.visitor.CommanderVisitor;
+import com.iluwatar.visitor.visitor.SergeantVisitor;
+import com.iluwatar.visitor.visitor.SoldierVisitor;
+
 /**
  * 
  * Visitor pattern defines mechanism to apply operations on nodes

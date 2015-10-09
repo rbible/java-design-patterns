@@ -19,5 +19,6 @@ public class App{
 
 		Client client = new Client();
 		client.setFilterManager(filterManager);
+		
 	}
 }

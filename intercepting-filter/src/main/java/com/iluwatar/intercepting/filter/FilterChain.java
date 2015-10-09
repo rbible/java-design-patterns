@@ -8,7 +8,7 @@
  */
 public class FilterChain {
 	
-	private Filter chain;
+	private IFilter chain;
 	
 	private final Target target;
 
@@ -16,7 +16,7 @@ public class FilterChain {
 		this.target = target;
 	}
 
-	public void addFilter(Filter filter) {
+	public void addFilter(IFilter filter) {
 		if (chain == null) {
 			chain = filter;
 		} else {

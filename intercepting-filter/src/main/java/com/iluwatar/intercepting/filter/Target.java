@@ -33,8 +33,7 @@ public class Target extends JFrame {
 		super("Order System");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(640, 480);
-		dtm = new DefaultTableModel(new Object[] { "Name", "Contact Number",
-				"Address", "Deposit Number", "Order" }, 0);
+		dtm = new DefaultTableModel(new Object[] { "Name", "Contact Number", "Address", "Deposit Number", "Order" }, 0);
 		jt = new JTable(dtm);
 		del = new JButton("Delete");
 		setup();
@@ -59,8 +58,7 @@ public class Target extends JFrame {
 	}
 
 	public void execute(String[] request) {
-		dtm.addRow(new Object[] { request[0], request[1], request[2],
-				request[3], request[4] });
+		dtm.addRow(new Object[] { request[0], request[1], request[2], request[3], request[4] });
 	}
 
 	class DListener implements ActionListener {

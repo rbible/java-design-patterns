@@ -1,26 +1,26 @@
 package com.iluwatar.poison.pill;
 
-import com.iluwatar.poison.pill.Message.Headers;
+import com.iluwatar.poison.pill.IMessage.Headers;
 
 /**
  * Class responsible for receiving and handling submitted to the queue messages
  */
 public class Consumer {
 
-	private final MQSubscribePoint queue;
+	private final IMQSubscribePoint queue;
 	private final String name;
 
-	public Consumer(String name, MQSubscribePoint queue) {
+	public Consumer(String name, IMQSubscribePoint queue) {
 		this.name = name;
 		this.queue = queue;
 	}
 
 	public void consume() {
 		while (true) {
-			Message msg;
+			IMessage msg;
 			try {
 				msg = queue.take();
-				if (msg == Message.POISON_PILL) {
+				if (msg == IMessage.POISON_PILL) {
 					System.out.println(String.format("Consumer %s receive request to terminate.", name));
 					break;
 				}

@@ -10,19 +10,19 @@ package com.iluwatar.factory.method;
 public class App {
 
 	public static void main(String[] args) {
-		Blacksmith blacksmith;
-		Weapon weapon;
+		IBlacksmith blacksmith;
+		IWeapon weapon;
 
 		blacksmith = new OrcBlacksmith();
-		weapon = blacksmith.manufactureWeapon(WeaponType.SPEAR);
+		weapon = blacksmith.manufactureWeapon(EWeaponType.SPEAR);
 		System.out.println(weapon);
-		weapon = blacksmith.manufactureWeapon(WeaponType.AXE);
+		weapon = blacksmith.manufactureWeapon(EWeaponType.AXE);
 		System.out.println(weapon);
 
 		blacksmith = new ElfBlacksmith();
-		weapon = blacksmith.manufactureWeapon(WeaponType.SHORT_SWORD);
+		weapon = blacksmith.manufactureWeapon(EWeaponType.SHORT_SWORD);
 		System.out.println(weapon);
-		weapon = blacksmith.manufactureWeapon(WeaponType.SPEAR);
+		weapon = blacksmith.manufactureWeapon(EWeaponType.SPEAR);
 		System.out.println(weapon);
 	}
 }

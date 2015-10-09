@@ -1,6 +1,6 @@
 package com.iluwatar.prototype;
 
-public class ElfBeast extends Beast {
+public class ElfBeast extends AbsBeast {
 
 	public ElfBeast() {
 	}
@@ -9,7 +9,7 @@ public class ElfBeast extends Beast {
 	}
 
 	@Override
-	public Beast clone() throws CloneNotSupportedException {
+	public AbsBeast clone() throws CloneNotSupportedException {
 		return new ElfBeast(this);
 	}
 

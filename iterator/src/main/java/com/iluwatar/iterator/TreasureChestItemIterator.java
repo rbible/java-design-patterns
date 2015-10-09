@@ -2,13 +2,15 @@ package com.iluwatar.iterator;
 
 import java.util.List;
 
-public class TreasureChestItemIterator implements ItemIterator {
+import com.iluwatar.iterator.enums.EItemType;
+
+public class TreasureChestItemIterator implements IItemIterator {
 
 	private TreasureChest chest;
 	private int idx;
-	private ItemType type;
+	private EItemType type;
 
-	public TreasureChestItemIterator(TreasureChest chest, ItemType type) {
+	public TreasureChestItemIterator(TreasureChest chest, EItemType type) {
 		this.chest = chest;
 		this.type = type;
 		this.idx = -1;
@@ -39,7 +41,7 @@ public class TreasureChestItemIterator implements ItemIterator {
 				tempIdx = -1;
 				break;
 			}
-			if (type.equals(ItemType.ANY)
+			if (type.equals(EItemType.ANY)
 					|| items.get(tempIdx).getType().equals(type)) {
 				break;
 			}

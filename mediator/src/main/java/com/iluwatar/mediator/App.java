@@ -1,5 +1,13 @@
 package com.iluwatar.mediator;
 
+import com.iluwatar.mediator.enums.EAction;
+import com.iluwatar.mediator.member.Hobbit;
+import com.iluwatar.mediator.member.Hunter;
+import com.iluwatar.mediator.member.Rogue;
+import com.iluwatar.mediator.member.Wizard;
+import com.iluwatar.mediator.party.IParty;
+import com.iluwatar.mediator.party.PartyImpl;
+
 /**
  * 
  * Mediator encapsulates how a set of objects (PartyMember) interact. Instead of
@@ -9,9 +17,9 @@ package com.iluwatar.mediator;
 public class App {
 
 	public static void main(String[] args) {
-		
+
 		// create party and members
-		Party party = new PartyImpl();
+		IParty party = new PartyImpl();
 		Hobbit hobbit = new Hobbit();
 		Wizard wizard = new Wizard();
 		Rogue rogue = new Rogue();
@@ -25,9 +33,9 @@ public class App {
 
 		// perform actions -> the other party members
 		// are notified by the party
-		hobbit.act(Action.ENEMY);
-		wizard.act(Action.TALE);
-		rogue.act(Action.GOLD);
-		hunter.act(Action.HUNT);
+		hobbit.act(EAction.ENEMY);
+		wizard.act(EAction.TALE);
+		rogue.act(EAction.GOLD);
+		hunter.act(EAction.HUNT);
 	}
 }
