@@ -9,7 +9,7 @@ import java.util.List;
  * domain-specific objects and data types (the public interface of the DAO), from how these needs can be satisfied with a specific DBMS,
  * database schema, etc.
  */
-public class CustomerDaoImpl implements CustomerDao {
+public class CustomerDaoImpl implements ICustomerDao {
 
     // Represents the DB structure for our example so we don't have to managed it ourselves
     // Note: Normally this would be in the form of an actual database and not part of the Dao Impl.
@@ -31,7 +31,6 @@ public class CustomerDaoImpl implements CustomerDao {
                 return customers.get(i);
             }
         }
-        // No customer found
         return null;
     }
 
@@ -39,7 +38,6 @@ public class CustomerDaoImpl implements CustomerDao {
     public void addCustomer(Customer customer) {
         customers.add(customer);
     }
-
 
     @Override
     public void updateCustomer(Customer customer) {
@@ -50,6 +48,6 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public void deleteCustomer(Customer customer) {
-        customers.remove(customer);
-    }
+		customers.remove(customer);
+	}
 }

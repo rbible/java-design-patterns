@@ -19,17 +19,14 @@ public class App {
 
 		Customer customer = new Customer(4, "Dan", "Danson");
 		customerDao.addCustomer(customer);
-
 		System.out.println("customerDao.getAllCustomers(): " + customerDao.getAllCustomers());
 
 		customer.setFirstName("Daniel");
 		customer.setLastName("Danielson");
 		customerDao.updateCustomer(customer);
-
 		System.out.println("customerDao.getAllCustomers(): " + customerDao.getAllCustomers());
 
 		customerDao.deleteCustomer(customer);
-
 		System.out.println("customerDao.getAllCustomers(): " + customerDao.getAllCustomers());
 	}
 
