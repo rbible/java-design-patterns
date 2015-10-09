@@ -1,6 +1,8 @@
-package com.iluwatar.dependency.injection;
+package com.iluwatar.dependency.injection.guice;
 
 import com.google.inject.AbstractModule;
+import com.iluwatar.dependency.injection.bacco.AbsTobacco;
+import com.iluwatar.dependency.injection.bacco.RivendellTobacco;
 
 /**
  * 
@@ -11,6 +13,6 @@ public class TobaccoModule extends AbstractModule {
 
 	@Override
 	protected void configure() {
-		bind(Tobacco.class).to(RivendellTobacco.class);
+		bind(AbsTobacco.class).to(RivendellTobacco.class);
 	}
 }

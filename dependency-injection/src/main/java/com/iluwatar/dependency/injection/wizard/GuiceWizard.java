@@ -1,6 +1,8 @@
-package com.iluwatar.dependency.injection;
+package com.iluwatar.dependency.injection.wizard;
 
 import javax.inject.Inject;
+
+import com.iluwatar.dependency.injection.bacco.AbsTobacco;
 
 /**
  * 
@@ -9,12 +11,12 @@ import javax.inject.Inject;
  * by Guice framework.
  *
  */
-public class GuiceWizard implements Wizard {
+public class GuiceWizard implements IWizard {
 	
-	private Tobacco tobacco;
+	private AbsTobacco tobacco;
 	
 	@Inject
-	public GuiceWizard(Tobacco tobacco) {
+	public GuiceWizard(AbsTobacco tobacco) {
 		this.tobacco = tobacco;
 	}
 

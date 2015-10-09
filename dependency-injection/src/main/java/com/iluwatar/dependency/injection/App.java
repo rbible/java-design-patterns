@@ -2,6 +2,11 @@ package com.iluwatar.dependency.injection;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import com.iluwatar.dependency.injection.bacco.SecondBreakfastTobacco;
+import com.iluwatar.dependency.injection.guice.TobaccoModule;
+import com.iluwatar.dependency.injection.wizard.AdvancedWizard;
+import com.iluwatar.dependency.injection.wizard.GuiceWizard;
+import com.iluwatar.dependency.injection.wizard.SimpleWizard;
 
 /**
  * 
@@ -25,16 +30,16 @@ import com.google.inject.Injector;
  *
  */
 public class App {
-	
-    public static void main( String[] args ) {
-    	SimpleWizard simpleWizard = new SimpleWizard();
-    	simpleWizard.smoke();
-    	
-    	AdvancedWizard advancedWizard = new AdvancedWizard(new SecondBreakfastTobacco());
-    	advancedWizard.smoke();
-    	
-    	Injector injector = Guice.createInjector(new TobaccoModule());
-    	GuiceWizard guiceWizard = injector.getInstance(GuiceWizard.class);
-    	guiceWizard.smoke();
-    }
+
+	public static void main(String[] args) {
+		SimpleWizard simpleWizard = new SimpleWizard();
+		simpleWizard.smoke();
+
+		AdvancedWizard advancedWizard = new AdvancedWizard(new SecondBreakfastTobacco());
+		advancedWizard.smoke();
+
+		Injector injector = Guice.createInjector(new TobaccoModule());
+		GuiceWizard guiceWizard = injector.getInstance(GuiceWizard.class);
+		guiceWizard.smoke();
+	}
 }

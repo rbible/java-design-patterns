@@ -1,4 +1,6 @@
-package com.iluwatar.dependency.injection;
+package com.iluwatar.dependency.injection.wizard;
+
+import com.iluwatar.dependency.injection.bacco.AbsTobacco;
 
 /**
  * 
@@ -7,11 +9,11 @@ package com.iluwatar.dependency.injection;
  * its constructor.
  *
  */
-public class AdvancedWizard implements Wizard {
+public class AdvancedWizard implements IWizard {
 	
-	private Tobacco tobacco;
+	private AbsTobacco tobacco;
 
-	public AdvancedWizard(Tobacco tobacco) {
+	public AdvancedWizard(AbsTobacco tobacco) {
 		this.tobacco = tobacco;
 	}
 

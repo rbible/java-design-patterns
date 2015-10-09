@@ -1,4 +1,6 @@
-package com.iluwatar.dependency.injection;
+package com.iluwatar.dependency.injection.wizard;
+
+import com.iluwatar.dependency.injection.bacco.OldTobyTobacco;
 
 /**
  * 
@@ -6,7 +8,7 @@ package com.iluwatar.dependency.injection;
  * It should depend on abstraction instead.
  *
  */
-public class SimpleWizard implements Wizard {
+public class SimpleWizard implements IWizard {
 	
 	private OldTobyTobacco tobacco = new OldTobyTobacco();
 	
