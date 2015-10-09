@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class App {
 
 	public static void main(String[] args) {
-		final Inventory inventory = new Inventory(1000);
+		final Inventory inventory = new Inventory(10);
 		ExecutorService executorService = Executors.newFixedThreadPool(3);
 		for (int i = 0; i < 3; i++) {
 			executorService.execute(new Runnable() {
