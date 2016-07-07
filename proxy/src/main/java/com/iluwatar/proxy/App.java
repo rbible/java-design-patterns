@@ -15,6 +15,6 @@ public class App {
 		tower.enter(new Wizard("Black wizard"));
 		tower.enter(new Wizard("Green wizard"));
 		tower.enter(new Wizard("Brown wizard"));
-
 	}
+	
 }
