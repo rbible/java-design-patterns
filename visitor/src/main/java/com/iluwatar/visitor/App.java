@@ -23,9 +23,9 @@ public class App {
 
 	public static void main(String[] args) {
 
-		Commander commander = new Commander(new Sergeant(new Soldier(),
-				new Soldier(), new Soldier()), new Sergeant(new Soldier(),
-				new Soldier(), new Soldier()));
+		Sergeant sergeant = new Sergeant(new Soldier(),
+				new Soldier(), new Soldier());
+        Commander commander = new Commander(sergeant, sergeant);
 		commander.accept(new SoldierVisitor());
 		commander.accept(new SergeantVisitor());
 		commander.accept(new CommanderVisitor());
