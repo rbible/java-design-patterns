@@ -6,7 +6,8 @@ import com.iluwatar.abstractfactory.infc.IKing;
 import com.iluwatar.abstractfactory.infc.IKingdomFactory;
 
 /**
- * 
+ *
+ * 抽象工厂
  * Concrete factory.
  * 
  */

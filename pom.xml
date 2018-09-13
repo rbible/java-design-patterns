@@ -20,31 +20,36 @@
 		<commons-dbcp.version>1.4</commons-dbcp.version>
 	</properties>
 	<modules>
-		<module>abstract-factory</module>
-		<module>builder</module>
-		<module>factory-method</module>
-		<module>prototype</module>
-		<module>singleton</module>
-		<module>adapter</module>
-		<module>bridge</module>
-		<module>composite</module>
+		<module>styles-create/abstract-factory</module>
+		<module>styles-create/builder</module>
+		<module>styles-create/factory-method</module>
+		<module>styles-create/prototype</module>
+		<module>styles-create/singleton</module>
+
+		<module>styles-struct/adapter</module>
+		<module>styles-struct/bridge</module>
+		<module>styles-struct/composite</module>
+		
+		<module>styles-struct/decorator</module>
+		<module>styles-struct/facade</module>
+		<module>styles-struct/flyweight</module>
+		<module>styles-struct/proxy</module>
+		
+		<module>styles-behavior/chain</module>
+		<module>styles-behavior/command</module>
+		<module>styles-behavior/interpreter</module>
+		<module>styles-behavior/iterator</module>
+		<module>styles-behavior/mediator</module>
+		<module>styles-behavior/memento</module>
+		
+		<module>styles-behavior/observer</module>
+		<module>styles-behavior/state</module>
+		<module>styles-behavior/strategy</module>
+		<module>styles-behavior/template-method</module>
+		<module>styles-behavior/visitor</module>
+
 		<module>dao</module>
-		<module>decorator</module>
-		<module>facade</module>
-		<module>flyweight</module>
-		<module>proxy</module>
-		<module>chain</module>
-		<module>command</module>
-		<module>interpreter</module>
-		<module>iterator</module>
-		<module>mediator</module>
-		<module>memento</module>
 		<module>model-view-presenter</module>
-		<module>observer</module>
-		<module>state</module>
-		<module>strategy</module>
-		<module>template-method</module>
-		<module>visitor</module>
 		<module>double-checked-locking</module>
 		<module>servant</module>
 		<module>service-locator</module>
